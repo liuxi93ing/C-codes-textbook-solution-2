@@ -1,1 +1,4 @@
-# C-codes-textbook-solution-2
+# 算法竞赛入门经典
+刘汝佳著
+
+课后章节练习参考代码
