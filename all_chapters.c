@@ -5,23 +5,71 @@
 
 //习题1-1 平均数（average）
 //输入3个整数，输出他们的平均数，保留3位小数。
-
+/*
+int main()
+{
+    int a, b, c;
+    scanf("%d%d%d",&a, &b, &c);
+    printf("%.3f\n", (float)(a+b+c)/3);
+    return 0;
+}
+*/
 
 //习题1-2 温度（temperature）
-//输入华氏温度f，输出对饮的摄氏温度c，保留三位小数。 c=(f-32)/9
+//输入华氏温度f，输出对饮的摄氏温度c，保留三位小数。 c=5(f-32)/9
+/*
+int main()
+{
+    double f;
+    scanf("%lf",&f);
+    printf("%.3lf\n",(f-32)*5/9);
+    return 0;
+}
+*/
 
 //习题1-3 连续和（sum）
 //输入正整数n，输入1+2+3....+n得值。提示：目标是解决问题，不是练习编程
 
+/*
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    printf("%d\n",n*(n+1)/2);
+    return 0;
+}
+
+*/
 
 //习题1-4 正弦和余弦（sincos）
 //输入正整数n（n<360）,输出n度的正弦，余弦函数值。提示：使用数学函数。
+/*
+int main()
+{
+    double const PI = 3.14159265;
+    int n;
+    double val_1, val_2;
 
-
+    scanf("%d",&n);
+    val_1 = sin((double)n*PI/180.0);
+    val_2 = cos((double)n*PI/180.0);
+    printf("%lf,%lf\n",val_1,val_2);
+    return 0;
+}
+*/
 //习题1-5 距离（distance）
 //输入4个浮点数x1,x2,y1,y2,输出平面坐标系中点（x1,y1）到点（x2，y2）的距离。
-
-
+/*
+int main()
+{
+    double x1, x2, y1, y2;
+    double dist;
+    scanf("%lf%lf%lf%lf",&x1,&x2,&y1,&y2);
+    dist = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    printf("%lf\n",dist);
+    return 0;
+}
+*/
 //习题1-6 偶数（odd）
 //输入一个整数，判断它是否为偶数。如果是输出“yes”。如果不是输出“no”。提示：多种判断方法。
 
@@ -40,7 +88,7 @@
 //输入年份，判断是否为闰年。如果是，则输出”yes“，否则输出”no“。提示：简单判断除以4的余数是不够的。
 
 
-//习题2-1 （）
+//习题2-1 位数（digit）
 //输入一个不超过10e9的正整数，输出它的位数。例如12735的位数是5。请不要使用任何数学函数，只用四则运算和循环语句实现。
 /*
 int main()
