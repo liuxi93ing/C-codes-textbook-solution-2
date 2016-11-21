@@ -72,13 +72,37 @@ int main()
 */
 //习题1-6 偶数（odd）
 //输入一个整数，判断它是否为偶数。如果是输出“yes”。如果不是输出“no”。提示：多种判断方法。
+/*
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    if(n%2==0)
+        printf("yes\n");
+    else
+        printf("no\n");
 
-
+    return 0;
+}
+*/
 //习题1-7 打折（discount）
 //一件衣服95元，若消费满300元，可打八五折。输入购买衣服的件数，输入需要支付的金额（单位：元）。保留两位小数。
+/*
+int main()
+{
+    int n;
+    scanf("%d",&n);
 
+    if(n>3)
+        printf("%.3lf",(double)n*95*0.85);
+    else
+        printf("%.3lf",(double)n*95);
+    return 0;
+}
+*/
 //习题1-8 绝对值（abs）
 //输入一个浮点数，输入它的绝对值，保留两位小数。
+
 
 
 //习题1-9 三角形（triangle）
