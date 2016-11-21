@@ -102,15 +102,71 @@ int main()
 */
 //习题1-8 绝对值（abs）
 //输入一个浮点数，输入它的绝对值，保留两位小数。
+/*
+int main()
+{
+    double n;
+    scanf("%lf",&n);
+    printf("%.2lf\n",fabs(n));
+    return 0;
+}
 
-
+*/
 
 //习题1-9 三角形（triangle）
 //输出三角形三边长度值（均为正整数），判断他是否能为直角三角形的三个边长。 如果可以，则输出”yes“，如果不可以则输出”no“。 如果根本无法构成三角形，这输入”not a triangle“。
+/*
+int main()
+{
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+
+    if(a>=b&&a>=c)
+        if(a>=b+c)
+            printf("not a triangle");
+        else if(a*a==b*b+c*c)
+            printf("yes");
+        else
+            printf("no");
+    else if(b>=a&&b>=c)
+        if(b>=a+c)
+            printf("not a triangle");
+        else if(b*b==a*a+c*c)
+            printf("yes");
+        else
+            printf("no");
+    else if(c>=a&&c>=b)
+        if(c>=b+a)
+            printf("not a triangle");
+        else if(c*c==b*b+a*a)
+            printf("yes");
+        else
+            printf("no");
+    return 0;
+}
+*/
 
 //习题1-10 年份（year）
 //输入年份，判断是否为闰年。如果是，则输出”yes“，否则输出”no“。提示：简单判断除以4的余数是不够的。
 
+/*
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    if(n%400==0)
+        printf("yes");
+    else if(n%100==0)
+        printf("no");
+    else if(n%4==0)
+        printf("yes");
+    else
+        printf("no");
+    return 0;
+}
+
+*/
 
 //习题2-1 位数（digit）
 //输入一个不超过10e9的正整数，输出它的位数。例如12735的位数是5。请不要使用任何数学函数，只用四则运算和循环语句实现。
