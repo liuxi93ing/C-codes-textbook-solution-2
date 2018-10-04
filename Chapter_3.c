@@ -8,26 +8,141 @@
 任务 1：分数均为不超过100的非负整数。
 任务 2：分数均为不超过100的非负实数，但最多保留两位小数。
 */
-
+/*
+// 任务 1
+// 分数范围是0-100，用cnt[101]来记录每个分数出现的次数，再遍历cnt[]，把出现次数最多的分数纪录在maxScore[]里
 #define MAXN 1000+10
-int a[MAXN];
+int score[MAXN];
+int maxScore[MAXN];
 int main()
 {
-    int i = 0, j = 0, k = 0;
-    memset(a,-1,sizeof(a));
-    while(scanf("%d",&a[i])!=EOF)
-        i++;
-    for(j=0;j<i;j++)
+    int i = 0, j = 0, x = 0, maxCnt = 0;
+    int cnt[101];
+    memset(score, -1, sizeof(score));
+    memset(maxScore, -1, sizeof(maxScore));
+    memset(cnt, 0, sizeof(cnt));
+    while(scanf("%d",&score[x])==1)
     {
-        printf("%d ",a[j]);
+        cnt[score[x]]++;
+        x++;
     }
-    printf("\n");
 
+//    for(j=0;j<x;j++)
+//        printf("%d ",score[j]);
+
+
+    for(i=0;i<=100;i++)
+    {
+        if(cnt[i]!=0&&cnt[i]==maxCnt)
+        {
+            maxScore[j++] = i;
+        }
+        if(cnt[i]>maxCnt)
+        {
+            j = 0;
+            maxCnt = cnt[i];
+            maxScore[j++] = i;
+        }
+    }
+
+    for(i=0;i<j;i++)
+        printf("%d ", maxScore[i]);
+    printf("\n");
     return 0;
 }
 
+
+//任务2
+//任务1的方法仍然使用，需要更大的数组cnt[10001]。另一个思路是把所有分数排序。直接遍历排序后的数组
+#define MAXN 1000+10
+double score[MAXN];
+double maxScore[MAXN];
+int main()
+{
+    int i = 0, j = 0, x = 0, cnt = 0, maxCnt = 0;
+    double temp = 0;
+    memset(score, -1, sizeof(score));
+    memset(maxScore, -1, sizeof(maxScore));
+    while(scanf("%lf", &score[x])==1)
+        x++;
+
+    if(x==1)
+    {
+        printf("%.2lf\n",score[0]);
+        return 0;
+    }
+
+    for(i=0;i<x;i++)
+    {
+        for(j=0;j<x-i-1;j++)
+        {
+            if(score[j]>score[j+1])
+            {
+                temp = score[j];
+                score[j] = score[j+1];
+                score[j+1] = temp;
+            }
+        }
+    }
+//    for(j=0;j<x;j++)
+//        printf("%.2lf ",score[j]);
+
+    j = 0;
+    for(i=1;i<x;i++)
+    {
+        if(score[i]==score[i-1])
+            cnt++;
+        else if(cnt==maxCnt)
+        {
+            maxScore[j++] = score[i-1];
+            cnt = 0;
+        }
+        else if(cnt>maxCnt)
+        {
+            j = 0;
+            maxScore[j++] = score[i-1];
+            maxCnt = cnt;
+            cnt = 0;
+        }
+    }
+
+    for(i=0;i<j;i++)
+        printf("%.2lf ", maxScore[i]);
+    printf("\n");
+    return 0;
+}
+*/
+
 /**习题3-2 单词的长度(word)
 输入若干个单词，输出他们的平均长度。单词只包含大写字母和小写字母，用一个或多个空格隔开。
+*/
+//不需要记录每一个单词，输入时记录长度即可
+/*
+#define MAXL 30
+char words[MAXL];
+
+int main()
+{
+    int i = 0, cnt = 0, sum = 0;
+    double ave = 0;
+    memset(words,0,sizeof(words));
+    while(scanf("%s",words)==1)
+    {
+        i = 0;
+        while(words[i]!='\0')
+            i++;
+        sum += i;
+        cnt++;
+    }
+
+    ave = (double)sum/(double)cnt;
+
+//    for(i=0;i<x;i++)
+//        printf("%s\n",words[i]);
+
+    printf("%lf\n",ave);
+    return 0;
+}
 */
 
 /**习题3-3 乘积的末3位(product)
